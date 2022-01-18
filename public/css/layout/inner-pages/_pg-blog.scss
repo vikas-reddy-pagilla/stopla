@@ -1,0 +1,149 @@
+.pg__blog {
+  // Header styles
+
+  &__header {
+    padding: 40px 0;
+
+    .title {
+      margin-bottom: 10px;
+      text-transform: unset;
+      letter-spacing: normal;
+      font-size: 22px;
+    }
+    .heading {
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav {
+    background-color: #1d1d1d;
+    margin-bottom: 20px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      color: $white;
+
+      li {
+        padding: 10px 20px;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          background-color: #ffffff;
+          color: black;
+        }
+      }
+    }
+  }
+
+  &__grid {
+    display: flex;
+    align-items: flex-start;
+
+    .title {
+      font-size: 24px;
+      text-transform: none;
+    }
+
+    // default article posts styles
+    article {
+      width: 100%;
+      margin-bottom: 30px;
+      border-radius: 4px;
+      padding: 12px;
+      transition: all 0.2s ease-out;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
+      background-color: #ffffff;
+      &:hover {
+        transform: translateY(-5px);
+      }
+      img {
+        max-width: 100%;
+        width: 100%;
+      }
+      &.featured {
+        width: 100% !important;
+
+        img {
+          object-fit: cover;
+          height: 300px;
+        }
+      }
+    }
+
+    &__main {
+      flex: 0 0 100%;
+      padding: 10px;
+      flex-direction: row;
+
+      @include media(800px) {
+        flex-basis: 70%;
+      }
+
+      &__normal {
+        display: flex;
+        margin: -20px;
+        flex-direction: column;
+
+        @include media(600px) {
+          flex-direction: row;
+        }
+
+        article {
+          h3 {
+            font-size: 20px;
+          }
+          img {
+            object-fit: cover;
+            height: 120px;
+
+            @include media(800px) {
+              height: 200px;
+            }
+          }
+        }
+
+        & > a {
+          flex: 1 1 0;
+          margin: 20px;
+          align-self: stretch;
+        }
+        button {
+          margin: 0 auto;
+          background-color: #1d1d1d;
+          letter-spacing: normal;
+          font-size: 16px;
+          font-weight: normal;
+          padding: 10px 16px;
+        }
+      }
+    }
+
+    &__side {
+      flex: 0 0 30%;
+      padding: 10px;
+      display: none;
+      visibility: hidden;
+      @include media(800px) {
+        display: initial;
+        visibility: visible;
+      }
+
+      article {
+        margin-bottom: 10px;
+        p {
+          font-size: 18px;
+        }
+
+        h3 {
+          font-size: 20px;
+          margin-bottom: 0;
+        }
+
+        img {
+          height: 180px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

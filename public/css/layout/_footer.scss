@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 0;
+
+  @include respond(sm) {
+    flex-direction: row;
+  }
+
+  & > div {
+    margin-bottom: 30px;
+    @include respond(sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__terms {
+    padding: 10px 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icon {
+    &:hover,
+    &:focus {
+      transform: scale(1.2);
+    }
+  }
+}

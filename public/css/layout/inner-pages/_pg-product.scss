@@ -1,0 +1,59 @@
+.pg__product {
+  &__links {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: -20px;
+    padding: 50px 0;
+    flex-direction: column;
+
+    @include respond(sm) {
+      flex-direction: row;
+    }
+
+    & > div {
+      flex: 1 1 0;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    &__farmer,
+    &__customer {
+      position: relative;
+      border-radius: 6px;
+      padding: 40px 20px;
+
+      @include respond(sm) {
+        padding: 40px;
+      }
+
+      img {
+        max-width: 400px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .title {
+        color: $black;
+        font-size: 22px;
+      }
+
+      a.btn {
+        border: 2px solid black;
+        background-color: inherit;
+        color: #000;
+      }
+    }
+
+    &__customer {
+      background-color: #ff9f1a;
+    }
+
+    &__farmer {
+      background-color: mediumseagreen;
+    }
+  }
+}

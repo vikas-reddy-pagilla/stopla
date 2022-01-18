@@ -1,0 +1,147 @@
+.heading {
+  font-family: "Lato", serif;
+  margin-bottom: 20px;
+  color: $black;
+  margin-bottom: 18px;
+  font-size: 34px;
+  line-height: 1.294em;
+  font-weight: 400;
+}
+
+.text {
+  color: #464e4e;
+  font-size: 16px;
+  line-height: 1.875em;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #464e4e;
+  font-size: 18px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+// Header Text Styles
+
+.header {
+  .heading {
+    font-size: 34px;
+    font-weight: normal;
+    line-height: 1.1;
+    color: $black;
+    @include respond(sm) {
+      font-size: 48px;
+    }
+  }
+  .text {
+    color: $black;
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: 90%;
+    @include respond(sm) {
+      font-size: 22px;
+    }
+  }
+}
+
+// About Text styles
+
+.about {
+  ul {
+    list-style-type: none;
+
+    li:before {
+      content: "";
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      background-image: url("../assets/svg/checkmark-circle-outline.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+// Products Text Styles
+
+.products {
+  a {
+    .text--hi {
+      font-weight: 600;
+    }
+    .text {
+      margin-bottom: 10px;
+    }
+    .title {
+      font-size: 22px;
+      letter-spacing: normal;
+    }
+  }
+}
+
+// Banner
+
+.banner {
+  h2 {
+    font-size: 48px;
+    line-height: 1.167em;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 30px;
+
+    @include respond(sm) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Contact
+
+// Footer
+
+.footer {
+  &__logo {
+    .text {
+      font-size: 16px;
+      margin-bottom: 10px;
+      &--big {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__social {
+    ion-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 15px;
+    }
+  }
+
+  &__links {
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      li {
+        margin: 0 10px 10px 0;
+      }
+    }
+  }
+
+  &__terms {
+    a {
+      padding: 0 20px;
+      &:not(:last-child) {
+        border-right: 1px solid rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}

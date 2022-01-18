@@ -1,0 +1,31 @@
+.about {
+  background-color: $background-color-pg;
+
+  &__flex {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    @include respond(md) {
+      flex-direction: row;
+    }
+
+    & > div {
+      flex: 0 0 50%;
+    }
+  }
+
+  &__gallery {
+    img {
+      width: 100%;
+      padding: 20px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    @include respond(md) {
+      margin-bottom: 0;
+    }
+  }
+}

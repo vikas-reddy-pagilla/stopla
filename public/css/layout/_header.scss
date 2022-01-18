@@ -1,0 +1,371 @@
+.header {
+  background-color: #fff;
+  color: $black;
+}
+
+.logoname {
+  font-size: 30px;
+  position: relative;
+  z-index: 100;
+}
+
+.active-link {
+  color: #c9d935 !important;
+}
+
+nav {
+  a.btn {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+#nav-padding-offset.active {
+  padding-bottom: 60px;
+}
+
+#nav-hr.hide {
+  display: none;
+  visibility: hidden;
+}
+
+.header_download-app {
+  display: none;
+  visibility: hidden;
+
+  img {
+    display: none;
+    visibility: hidden;
+  }
+
+  @include respond(md) {
+    display: block;
+    visibility: visible;
+    img {
+      display: block;
+      width: 155px;
+      visibility: visible;
+    }
+  }
+}
+
+.app_hide a img {
+  width: 100px !important;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 24px;
+  transition: all 0.6s cubic-bezier(0.17, 0.67, 1, 1.23);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+
+  .list {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0 24px;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    text-align: left;
+    flex-direction: column;
+    background-color: $white;
+    color: $black;
+    list-style-type: none;
+    transition: all 0.4s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    .drop-down {
+      position: relative;
+    }
+    li {
+      font-size: 22px;
+      font-weight: 500;
+      padding: 18px 0;
+      align-self: stretch;
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        span {
+          font-size: 10px;
+        }
+
+        img {
+          width: 65px;
+        }
+      }
+      .drop-down-menu {
+        background: #1d1d1d;
+        color: $black;
+
+        list-style-type: none;
+        display: none;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        flex-direction: column;
+        margin-top: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-50px);
+        transition: all 0.6s ease;
+        &.active {
+          display: flex;
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+        li {
+          border-bottom: 1px solid $black;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: static;
+    left: auto;
+    top: auto;
+    width: auto;
+    transform: translate(0, 0);
+    background: transparent;
+    color: $black;
+    h2 {
+      color: $black;
+      margin-left: 20px;
+      margin-bottom: 0;
+    }
+    .drop-down {
+      position: relative;
+    }
+    .list {
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+      position: static;
+      transform: translateX(0);
+      background-color: transparent;
+      background-color: none;
+      flex-direction: row;
+      width: auto;
+      align-items: center;
+      color: $black;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      box-shadow: none;
+      li {
+        font-size: initial;
+        font-weight: 900;
+        letter-spacing: 1px;
+        padding: 0 18px;
+        align-self: auto;
+        border: none;
+        font-size: 14px;
+        text-transform: uppercase;
+
+        &.contact_hide,
+        .app_hide {
+          display: inherit;
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .drop-down-menu {
+          position: absolute;
+          top: 62px;
+          white-space: nowrap;
+          display: flex;
+          background-color: $black;
+          color: $black;
+          margin-top: 0;
+          padding-left: 0;
+          li {
+            font-weight: 600;
+            padding: 24px 50px;
+          }
+        }
+      }
+    }
+  }
+
+  @include respond(md) {
+    .list li.contact_hide,
+    .list li.app_hide {
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    a.btn {
+      display: initial;
+      visibility: visible;
+    }
+  }
+}
+
+//  responsive nav bar styles when open/clicked menu button
+
+nav .list.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  position: absolute;
+}
+
+nav.active {
+  .logoName {
+    position: relative;
+    z-index: 10;
+  }
+  .menu {
+    position: relative;
+    z-index: 10;
+    .line {
+      stroke: $black;
+    }
+  }
+}
+
+//  sticky class is added when scrolled
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+// add box shadow when scrolled
+
+.nav-container.sticky {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 10px;
+  width: 100%;
+
+  // hide hr line when scroll sticky
+
+  hr {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+
+    @media only screen and (min-width: 768px) {
+      display: initial;
+      visibility: visible;
+      opacity: 0;
+    }
+  }
+
+  // button padding decrease on scroll
+
+  nav {
+    @include respond(sm) {
+      height: 60px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+    }
+  }
+}
+
+// Hero text center
+
+.hero {
+  &__flex {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    @include respond(sm) {
+      flex-direction: row;
+      padding: 0;
+      min-height: 400px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    @include respond(sm) {
+      text-align: left;
+    }
+  }
+
+  &__img {
+    img {
+      max-width: 500px;
+      width: 100%;
+      margin: 20px 0;
+      @include respond(sm) {
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// hamburger menu
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+  visibility: visible;
+  @include respond(sm) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.line {
+  fill: none;
+  stroke: $black;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}

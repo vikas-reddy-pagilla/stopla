@@ -1,0 +1,35 @@
+.contact {
+  background-color: $background-color-pg;
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include media(800px) {
+      flex-direction: row;
+    }
+
+    & > div:not(:last-child) {
+      margin-bottom: 30px;
+
+      & .title {
+        color: $grey;
+      }
+
+      @include media(800px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__bold {
+    font-weight: 900;
+    font-size: 18px;
+    color: $black;
+
+    @include media(900px) {
+      font-size: 22px;
+    }
+  }
+}

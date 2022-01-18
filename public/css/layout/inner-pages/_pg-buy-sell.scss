@@ -1,0 +1,125 @@
+.pg__buy-sell {
+  padding: 50px 0;
+  .buy-banner {
+    border-radius: 6px;
+    padding: 30px;
+
+    .arrow-back {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      svg {
+        width: 30px;
+        height: 30px;
+        color: $black;
+        border: 2px solid $black;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+      span {
+        color: $black;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+
+    .flex-wrapper {
+      display: flex;
+
+      flex-direction: column;
+
+      @include media(700px) {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    &__image {
+      margin-right: 40px;
+      img {
+        max-width: 500px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__info {
+      .text {
+        color: $black;
+        font-size: 17px;
+      }
+    }
+  }
+
+  .buy-wrapper {
+    margin: 50px 0;
+
+    .buy__heading {
+      text-align: center;
+      .heading {
+        margin-bottom: 10px;
+      }
+
+      .text {
+        font-size: 17px;
+        font-weight: bold;
+        color: $black;
+      }
+    }
+  }
+
+  input#crops {
+    width: 60%;
+
+    @include media(420px) {
+      width: 70%;
+    }
+  }
+
+  button.crops-add {
+    background-color: mediumseagreen;
+    padding: 18px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
+
+  .sell__crops-list {
+    align-self: start;
+    margin: 20px 0;
+
+    .heading {
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: none;
+    }
+
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+
+      li {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      button.del {
+        display: inline-block;
+        margin-left: 6px;
+        padding: 4px;
+        font-size: 12px;
+        box-shadow: none;
+        outline: none;
+        border: none;
+        background-color: #dc3545;
+        border-radius: 6px;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+}

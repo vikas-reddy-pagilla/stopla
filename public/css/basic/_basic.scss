@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: inherit;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+hr {
+  flex-basis: 100%;
+  opacity: 0.3;
+}
+
+section {
+  padding: 50px 0;
+
+  @include respond(sm) {
+    padding: 100px 0;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: $black;
+  margin-right: 6px;
+  position: relative;
+  top: 3px;
+  transition: all 0.2s ease;
+
+  &--mid {
+    width: 30px;
+    height: 30px;
+  }
+
+  &--big {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;
+
+  @include media(280px) {
+    padding: 0 24px;
+  }
+
+  &--small {
+    max-width: 900px;
+  }
+}

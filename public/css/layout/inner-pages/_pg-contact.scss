@@ -1,0 +1,12 @@
+.pg__contact {
+  &__info {
+    margin: 50px 0;
+
+    .text {
+      width: 100%;
+      @include respond(sm) {
+        width: 70%;
+      }
+    }
+  }
+}

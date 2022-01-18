@@ -1,0 +1,86 @@
+.products {
+  background-color: $white;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include respond(sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__features {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-direction: column;
+
+    @include respond(sm) {
+      flex-direction: row;
+    }
+
+    &__card {
+      background-color: mediumseagreen;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      padding: 20px 30px;
+      width: 100%;
+      border-radius: 4px;
+      align-self: stretch;
+
+      &:not(:last-child) {
+        margin: 20px 0;
+
+        @include respond(sm) {
+          margin: 0;
+          margin-right: 30px;
+        }
+      }
+
+      img {
+        max-width: 150px;
+        width: 100%;
+      }
+      .text {
+        font-size: 30px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        text-decoration: underline;
+        color: white;
+      }
+
+      ul {
+        color: white;
+
+        li:before {
+          content: "";
+          display: inline-block;
+          height: 1em;
+          width: 1em;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon' viewBox='0 0 512 512'%3E%3Ctitle%3ECheckmark Circle%3C/title%3E%3Cpath d='M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z' fill='none' stroke='white' stroke-miterlimit='10' stroke-width='32'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='32' d='M352 176L217.6 336 160 272'/%3E%3C/svg%3E");
+          background-size: contain;
+          background-repeat: no-repeat;
+          padding-left: 4px;
+          position: relative;
+          top: 2px;
+        }
+
+        li {
+          font-size: 18px;
+          font-weight: 700;
+          font-weight: 500;
+          padding: 10px 0;
+
+          ion-icon {
+            position: relative;
+            top: 2px;
+            font-size: 16px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
